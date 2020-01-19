@@ -27,6 +27,8 @@ class ProfileController extends Controller
             User::where('id', $user->id)
                 ->update(['name' => $nume]);
             $user->name=$nume;
+            toastr()->success('Nume modificat cu success');
+
         }
 
         $prenume = $request->input('prenume');
@@ -34,6 +36,8 @@ class ProfileController extends Controller
             User::where('id', $user->id)
                 ->update(['sirname' => $prenume]);
             $user->sirname=$prenume;
+            toastr()->success('Prenume modificat cu success');
+
         }
 
         $bday = $request->input('bday');
@@ -41,7 +45,12 @@ class ProfileController extends Controller
             User::where('id', $user->id)
                 ->update(['bday' => $bday]);
             $user->bday=$bday;
+            //toastr()->success('Ziua de nastere modificat cu success');
+
         }
+
+
+
         return view('profile',[
             'user' => $user,
         ]);

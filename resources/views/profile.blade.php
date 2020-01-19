@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    @toastr_css <!-- https://github.com/yoeunes/toastr -->
+    @jquery
+    @toastr_js
+    @toastr_render
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div align="center">
@@ -43,7 +47,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Valoare actuala:&nbsp;<strong>{{ $user->bday }}</strong></span>
                                         </div>
-                                        <input class="form-control" type="datetime-local" value="{{ $user->bday }}" id="bday" name="bday">
+                                        <input class="form-control" type="date" value="{{ $user->bday }}" id="bday" name="bday">
             </div>
                                 </td>
                             </tr>
@@ -64,7 +68,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center"><a href="#"><h3>RESETARE PAROLA</h3></a></td>
+                            <!--<td colspan="2" align="center"><a href="#"><h3>RESETARE PAROLA</h3></a></td>-->
                             </tr>
                         </tbody>
                     </table>
@@ -90,6 +94,7 @@
 
         </div>
     </div>
+    <!--
     <div class="row">
         <div class="col-4">
             For debug: <a href="{{ route('debitare') }}">Adauga tranzactie noua de debitare</a>
@@ -97,5 +102,6 @@
             For debug: <a href="{{ route('creditare') }}">Adauga tranzactie noua de creditare</a>
         </div>
     </div>
+    -->
 </div>
 @endsection

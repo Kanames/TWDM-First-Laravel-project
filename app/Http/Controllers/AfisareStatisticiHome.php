@@ -60,6 +60,19 @@ class AfisareStatisticiHome extends Controller
         $statistici->dataset('Users by trimester', 'doughnut', [$valoareMancare, $valoareCumparaturi, $valoareFacturi, $valoareDistractie, $valoareDezvoltare, $valoareAltele])
             ->color($borderColors)
             ->backgroundcolor($fillColors);
-        return view('afisareStatisticiHome', [ 'statistici' => $statistici ] );
+
+         $isStatisticsAvailabel = ($valoareMancare==null || $valoareMancare==0)
+                                && ($valoareCumparaturi==null || $valoareCumparaturi==0)
+                                && ($valoareFacturi==null || $valoareFacturi==0)
+                                && ($valoareDistractie==null || $valoareDistractie==0)
+                                && ($valoareDezvoltare==null || $valoareDezvoltare==0)
+                                && ($valoareAltele==null || $valoareAltele==0);
+
+        if($isStatisticsAvailabel){
+            toastr()->info('Nu se poate genera statistica fara minim o tranzactie!');
+            return redirect()->route('home');
+        }else{
+            return view('afisareStatisticiHome', [ 'statistici' => $statistici ] );
+        }
     }
 }

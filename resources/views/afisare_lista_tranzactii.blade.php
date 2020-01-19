@@ -26,7 +26,7 @@
     </div>
 
     <div class="row" >
-        <div class="col-12 p-5">
+        <div class="col-md-12 col-lg-12 p-5">
             <div align="center">
                 <p>Tabel cu toate tranzactiile efectuate</p>
             </div>
@@ -47,7 +47,8 @@
                     </select>
                 </div>
             </form>
-            <table class="table"> <!-- class="table table-bordered" -->
+            <div class="table-responsive">
+            <table class="table table-sm" > <!-- class="table table-bordered" -->
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -91,6 +92,7 @@
                 </tbody>
 
             </table>
+            </div>
             <div class="col-md-6 col-6 col-sm-6 col-lg-6" align="left">
                 <a href="{{ route('home') }}"><button type="button" class="btn btn-info" >Inapoi</button></a>
             </div>
