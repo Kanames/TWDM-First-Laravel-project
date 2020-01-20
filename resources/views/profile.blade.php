@@ -7,16 +7,16 @@
     @toastr_js
     @toastr_render
     <div class="row">
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-12 col-xs-12">
             <div align="center">
-                <img align="middle" width="100%" height="100%" src="\svg\avatar.jpg"/>
+                <img align="middle" width="100%" height="100%" src="@if($user->sex!=null && $user->sex == 'Masculin') \svg\avatar.jpg @else \svg\avatarF.jpg  @endif "/>
             </div>
         </div>
-        <div class="col-md-7 col-sm-12">
+        <div class="col-md-7 col-sm-12 col-xs-12">
             <div align="center">
                 <h3>Editare cont</h3>
                 <form method="GET" action="{{ route('updateProfile',Auth::user()) }}">
-                    <table class="table">
+                    <table class="table ">
                         <tbody>
                             <tr>
                                 <td>Nume</td>
@@ -48,7 +48,7 @@
                                             <span class="input-group-text" id="inputGroup-sizing-sm">Valoare actuala:&nbsp;<strong>{{ $user->bday }}</strong></span>
                                         </div>
                                         <input class="form-control" type="date" value="{{ $user->bday }}" id="bday" name="bday">
-            </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -68,8 +68,18 @@
                                 </td>
                             </tr>
                             <tr>
-                            <!--<td colspan="2" align="center"><a href="#"><h3>RESETARE PAROLA</h3></a></td>-->
+                                <td>Genul utilizatorului</td>
+                                <td>
+                                    <div class="radio">
+                                        <label><input type="radio" name="sex" value="Masculin" @if($user->sex!=null && $user->sex == 'Masculin') CHECKED @endif> Masculin</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="sex" value="Feminin"  @if($user->sex!=null && $user->sex == 'Feminin')  CHECKED @endif> Feminin</label>
+                                    </div>
+                                </td>
                             </tr>
+
+                            <!--<tr><td colspan="2" align="center"><a href="#"><h3>RESETARE PAROLA</h3></a></td></tr>-->
                         </tbody>
                     </table>
                     <div class="form-group row mb-0">
@@ -83,6 +93,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-4">
 
@@ -94,6 +105,7 @@
 
         </div>
     </div>
+
     <!--
     <div class="row">
         <div class="col-4">

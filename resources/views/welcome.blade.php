@@ -81,11 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-ms">
-                    Monitorizare cheltuieli
+                    {{ config('app.name') }}
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://drive.google.com/file/d/1HTe7bwX3KmEEgi8GE6c8wH-xDLX2fqxF/view?usp=sharing">Docs</a>
                     <a href="https://www.digi24.ro/">News</a>
                     <a href="https://mylifestory8831.wordpress.com">Blog</a>
                     <a href="https://github.com/Kanames">GitHub</a>

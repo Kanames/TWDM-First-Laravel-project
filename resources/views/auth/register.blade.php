@@ -53,6 +53,21 @@
                             </div>
                         </div>
 
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex-ul utilizatorului') }}</label>--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <div class="form-check">--}}
+{{--                                    <input id="sex1" type="radio" class="form-check-input @error('sex') is-invalid @enderror" name="sex" value="{{ old('Masculin') }}">--}}
+{{--                                    <label class="form-check-label" for="sex1">Masculin</label>--}}
+{{--                                </div>--}}
+{{--                                @error('sex')--}}
+{{--                                <span class="invalid-feedback" role="alert">--}}
+{{--                                     <strong>{{ $message }}</strong>--}}
+{{--                                </span>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 

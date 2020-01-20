@@ -46,9 +46,16 @@ class ProfileController extends Controller
                 ->update(['bday' => $bday]);
             $user->bday=$bday;
             //toastr()->success('Ziua de nastere modificat cu success');
-
         }
 
+        $sex = $request->input('sex');
+        //dd($sex);
+        if($sex!= null && $sex!=''){
+            User::where('id', $user->id)
+                ->update(['sex' => $sex]);
+            $user->sex=$sex;
+            toastr()->success("Gen-ul modificat cu success in $sex");
+        }
 
 
         return view('profile',[
